@@ -1,6 +1,6 @@
 <?php
     function timKiemLonNhat($a = array()){
-        $max = 0;
+        $max = $a[0];
         $n = count($a);
         for ($i = 0 ; $i<= $n+1 ;$i++){
             if ($a[$i] >= $max){
