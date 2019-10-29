@@ -1,6 +1,6 @@
 <?php
 // sắp xếp nổi bọt
-function sapxep($a = array(),$x)
+function sapxep($a = array(),$x = 0)
 {
     $n = count($a);
     for ($i = 0; $i < $n - 1; $i++) {
@@ -18,22 +18,23 @@ function sapxep($a = array(),$x)
             if ($a[$i] > $a[$i+1] ) {
                 $m ++ ;
                 if ($m == $x){
-                    $max = $a[$i+1];
+                    $max = $a[$i];
                 }
             }
     }
     return array(
         'items' => $a,
-        'max' => $max
+        'x' => $x,
+        'max' => $max,
+
     );
 }
 
 $a = array(1, 78, 45, 2, 3, 44, 5, 6, 2,78,78, 33, 55, 78, 34, 6667, 8890, 45);
-$b = sapxep($a,5);
+$b = sapxep($a,4);
 echo '<pre>';
 print_r($b);
 echo '</pre>';
-
 
 ?>
 
